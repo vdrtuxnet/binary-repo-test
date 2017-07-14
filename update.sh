@@ -1,8 +1,11 @@
-/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/bin-repo/Generic_x68_64
-/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/bin-repo/OSX_64
-/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/bin-repo/RPi
-/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/bin-repo/RPi2
-/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/bin-repo/WIN_32
-/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/bin-repo/Odroid_C2
-/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/bin-repo/S905
+/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/binary-repo-test/kodi-17/armv7
+/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/binary-repo-test/kodi-17/linux_x68_64
+/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/binary-repo-test/kodi-17/osx_64
+/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/binary-repo-test/kodi-17/win_32
+/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/binary-repo-test/kodi-18/armv7
+/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/binary-repo-test/kodi-18/linux_x68_64
+/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/binary-repo-test/kodi-18/osx_64
+/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/binary-repo-test/kodi-18/win_32
+/www/repo/binary-git/repo_aktualisieren.sh /data/buildnew/binary-repo-test/kodi-18/win_64
+
 
