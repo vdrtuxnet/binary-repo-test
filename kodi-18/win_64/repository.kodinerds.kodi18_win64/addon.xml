@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.kodinerds.kodi18_win_64" name="kodinerds.net Binary Addons for Kodi-18_win_64" version="2.0.0" provider-name="vdr.tuxnet">
+	<requires>
+		<import addon="kodi.binary.global.gui" version="5.10.0"/>
+	</requires>
+	<extension point="xbmc.addon.repository" name="vdr.tuxnet">
+		<info compressed="true">https://raw.githubusercontent.com/kodinerds/binary-repo-test/master/kodi-18/win_64/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/kodinerds/binary-repo-test/master/kodi-18/win_64/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/kodinerds/binary-repo-test/master/kodi-18/win_64/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Official Repository of Kodinerds, Kodi-18_win_64</summary>
+		<summary lang="de">Offizielles Repository der Kodinerds, Kodi-18_win_64</summary>
+		<description lang="en">This is the official Repository of the german Community 'Kodinerds' which you'll find at www.kodinerds.net..
+			Most of the hosted Addons are supported by the members of the Community. Enjoy!</description>
+		<description lang="de">Das ist das offizielle Repository der deutschen Community 'Kodinerds', welche Du unter www.kodinerds.net findest..
+			Die meisten der hier gehosteten Addons werden von den Mitgliedern der Community aktiv supported. Viel Spaß!</description>
+		<disclaimer lang="en">Some parts of this addons may not be legal in your country of residence, please check with your local laws before installing.
+			Kodinerds are not responsible for any data loss or damage, use this repository at your own risk in any case. </disclaimer>
+		<disclaimer lang="de">Einige Teile dieser Addons könnten an ihrem Wohnsitz nicht legal sein, wir bitten um Beachtung der lokal gültigen Gesetze vor der Installation.
+			Kodinerds ist nicht verantwortlich für Datenverlust oder sonstige Beschädigung, sie benutzen dieses Repository auf eigenes Risiko in jedem Fall.</disclaimer>
+		<platform>windows</platform>
+	</extension>
+</addon>
