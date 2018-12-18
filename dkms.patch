@@ -1,0 +1,40 @@
+--- a/dkms	2016-09-24 04:42:25.000000000 +0200
++++ b/dkms	2017-09-10 16:46:35.658472976 +0200
+@@ -1608,6 +1608,11 @@
+ 	    list_each_installed_module "$module" "$1" "$2" | ${weak_modules} --remove-modules
+ 	fi
+ 
++	local was_installed=""
++	if (do_status $module $module_version | grep -q "installed"); then
++	    was_installed="true"
++	fi
++
+ 	for ((count=0; count < ${#built_module_name[@]}; count++)); do
+ 	    real_dest_module_location="$(find_actual_dest_module_location $module $count $1 $2)"
+ 	    echo $""
+@@ -1634,14 +1639,19 @@
+ 		echo $"   - No original module was found for this module on this kernel."
+ 		echo $"   - Use the dkms install command to reinstall any previous module version."
+ 
+-		# Remove modules_conf entries from /etc/modules.conf if remake_initrd is set or if this is last instance removed
+-		if [[ $remake_initrd ]] || \
+-		    (do_status $module $module_version | grep -q "installed"); then
+-		    echo $""
+-		    moduleconfig_remove "$1"
+-		fi
++#		# Remove modules_conf entries from /etc/modules.conf if remake_initrd is set or if this is last instance removed
++#		if [[ $remake_initrd ]] || \
++#		    (do_status $module $module_version | grep -q "installed"); then
++#		    echo $""
++#		    moduleconfig_remove "$1"
++#		fi
+ 	    fi
+ 	done
++	# Remove modules_conf entries from /etc/modules.conf if remake_initrd is set or if this is last instance removed
++	if [[ $remake_initrd && $was_installed ]]; then
++	    echo $""
++	    moduleconfig_remove "$1"
++	fi
+ 	rm -f "$dkms_tree/$module/kernel-$1-$2"
+     else
+ 	echo $""
