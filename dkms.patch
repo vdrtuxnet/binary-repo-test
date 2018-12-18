@@ -1,7 +1,7 @@
 --- a/dkms	2016-09-24 04:42:25.000000000 +0200
 +++ b/dkms	2017-09-10 16:46:35.658472976 +0200
 @@ -1608,6 +1608,11 @@
- 	    list_each_installed_module "$module" "$1" "$2" | ${weak_modules} --remove-modules
+ 	    list_each_installed_module "$module" "$1" "$2" | ${weak_modules} ${weak_modules_no_initrd} --remove-modules
  	fi
  
 +	local was_installed=""
