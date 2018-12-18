@@ -4,7 +4,6 @@
  	    list_each_installed_module "$module" "$1" "$2" | ${weak_modules} ${weak_modules_no_initrd} --remove-modules
  	fi
   fi
- 
 +	local was_installed=""
 +	if (do_status $module $module_version | grep -q "installed"); then
 +	    was_installed="true"
