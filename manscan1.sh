@@ -1,13 +1,22 @@
+
 #!/bin/sh
 
 # EPG Scan durch Zappen durchführen
 SVDRPSEND="svdrpsend 127.0.0.1 6419"
-DELAY=10
+# Anzahl von Zeichen in der Zeile. Wenn < 50 zb: Kanalgruppen, zeilen in Hilfsdatei auslagen
+sed -n '/^.\{50\}/!p' /etc/vdr/channels.conf > /tmp/channels.tmp
+DELAY=5
 START_CHANNEL=1
-MAX_CHANNEL=310
+# max. Zeilen in channel.conf - Kanalgruppen-Hilfsdatei
+let "MAX_CHANNEL=`sed $= -n /etc/vdr/channels.conf` - `sed $= -n /tmp/channels.tmp`"
 
 NEXT_EVENT=`$SVDRPSEND "NEXT rel" | grep ^250 | awk '{print $NF }'`
 WAIT_TIME=`expr $MAX_CHANNEL \* \( $DELAY \* 2 \)`
+
+if [ -z "$NEXT_EVENT" ]; then
+NEXT_EVENT=86400 # sek. 
+echo Kein Timer gesetzt, setzte Dummywert von 86400.
+fi
 
 echo Nächste Aufnahme in $NEXT_EVENT Sekunden, erforderliche Wartezeit $WAIT_TIME.
 if [ $NEXT_EVENT -gt $WAIT_TIME ]; then
